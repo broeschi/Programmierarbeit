@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.healthmarketscience.jackcess.*;
+import com.sun.rowset.internal.Row;
 
 
 
@@ -30,23 +31,12 @@ public class Datenbank {
     public static void loadData() throws Exception {
     	ArrayList<String> Adresse = new ArrayList<String>(); 
     	 Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb"));
-    	 //Table table = db.getTable("Adressen");
+    	 Table table = db.getTable("Adressen");
     	 //table.getColumn(null);
+    	 for (Row row : table) {
+    		 
+    	 }
     
-    	 Connection conn=DriverManager.getConnection(
-    	      "jdbc:ucanaccess://C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb");
-    	Statement s = conn.createStatement();
-
-    	ResultSet rs = s.executeQuery("SELECT adrName, adrVorname, adrGebDat, adrAdresse FROM [tblAdressen]");
-    	
-    	while (rs.next()) {
-    		Adresse.add(rs.getString(1))  ;
-    		Adresse.add(rs.getString(2));
-    		Adresse.add(rs.getString(3))  ;
-    		Adresse.add(rs.getString(4));
-    	    //System.out.println(rs.getString(1));
-
-    	}
         	    System.out.println(Adresse);
 
     }
