@@ -47,9 +47,10 @@ public class Datenbank {
     	
     	 Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb"));
     	 Table table = db.getTable("tblAdressen");
-		 PersonConverter converter = new PersonConverter();
+		 
 
-    	 for (com.healthmarketscience.jackcess.Row row : table) {
+		 for(Row row : table) {
+			 PersonConverter converter = new PersonConverter();
 			Person p = converter.dbToModel(row);
     		return (Table) p;
     		 
