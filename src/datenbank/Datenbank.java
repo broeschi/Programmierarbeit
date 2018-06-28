@@ -35,6 +35,11 @@ public class Datenbank {
 			e.printStackTrace();
 		}
     	    }   
+    	MainApp.main(null);
+    	
+    }
+	  
+   
     /**
      * Verbindung zu MS Access DB aufbauen und Inhalt laden
      * 
