@@ -2,6 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Rudolf Broger/Downloads/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rudolf Broger/Downloads/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rudolf Broger/Downloads/hsqldb-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rudolf Broger/Downloads/jackcess-2.1.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rudolf Broger/Downloads/ucanaccess-4.0.1.jar"/>
 	<classpathentry kind="lib" path="src/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="src/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="src/hsqldb-2.3.1.jar"/>
