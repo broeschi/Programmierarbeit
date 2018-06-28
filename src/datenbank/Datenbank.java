@@ -28,23 +28,13 @@ public class Datenbank {
      */
     public static void main(String[] args) {
     	//MainApp.main(null);
-    	
-    
-
-
-	  
-	  
-   
-
     	try {
 			loadData();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	    }
-    
-
+    	    }   
     /**
      * Verbindung zu MS Access DB aufbauen und Inhalt laden
      * 
@@ -64,7 +54,7 @@ public class Datenbank {
 
 		 for(com.healthmarketscience.jackcess.Row row : table) {
 			 PersonConverter converter = new PersonConverter();
-			Person p = converter.dbToModel(row);
+					Person p = converter.dbToModel(row);
     		return (Table) p;
     		 
     	 }
