@@ -1,9 +1,2 @@
-/GUI/
-/Person/
-/Stammdaten/
 /datenbank/
-/converter/
-<<<<<<< Upstream, based on branch 'Hilfe' of https://github.com/broeschi/Programmierarbeit.git
-/.gitignore/
-=======
->>>>>>> bfb2063 2. Versuch zum korrekten Aufbau
+/GUI/

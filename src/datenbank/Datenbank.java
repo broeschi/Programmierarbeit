@@ -29,12 +29,22 @@ public class Datenbank {
     public static void main(String[] args) {
     	//MainApp.main(null);
     	
-    }
+    
 
 
 	  
 	  
    
+
+    	try {
+			loadData();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	    }
+    
+
     /**
      * Verbindung zu MS Access DB aufbauen und Inhalt laden
      * 
@@ -45,8 +55,10 @@ public class Datenbank {
 
     	ArrayList<Person> adresse = new ArrayList<Person>(); 
     	
+
     	 //Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb"));
     	 Database db = DatabaseBuilder.open(new File("C:\\Users\\u117089\\OneDrive\\Wirtschaftsinformatik\\FH\\Kalaidos\\Softwareentwicklung_I\\wo\\MSV_be.accdb"));
+
     	 Table table = db.getTable("tblAdressen");
 		 
 

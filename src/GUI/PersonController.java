@@ -1,7 +1,6 @@
 package GUI;
 
 import datenbank.Datenbank;
-import datenbank.MainApp;
 //import ch.makery.address.model.Person;
 //import ch.makery.adress.util.DateUtil;
 import javafx.fxml.FXML;
