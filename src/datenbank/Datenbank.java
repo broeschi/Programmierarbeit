@@ -22,6 +22,12 @@ public class Datenbank {
      * @param args
      */
     public static void main(String[] args) {
+    	try {
+			loadData();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	    }
     
     /**
@@ -30,7 +36,7 @@ public class Datenbank {
      * @author Rudolf Broger
      * @throws Exception
      */
-    public static Table loadData() throws Exception {
+    public static Person loadData() throws Exception {
 
     	ArrayList<Person> adresse = new ArrayList<Person>(); 
     	
@@ -40,7 +46,7 @@ public class Datenbank {
 
     	 for (com.healthmarketscience.jackcess.Row row : table) {
 			Person p = converter.dbToModel(row);
-    		return (Table) p;
+    		return (Person) p;
     		 
     	 }
     	 System.out.print(adresse);	 //table.getColumn(null);
@@ -48,7 +54,7 @@ public class Datenbank {
     	// Connection conn=DriverManager.getConnection(
     	//      "jdbc:ucanaccess://C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb");
     	 
-    	return table;
+    	return (Person) table;
     	     
     }
       
