@@ -8,6 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.healthmarketscience.jackcess.*;
+import com.sun.rowset.internal.Row;
+
+import Person.Person;
+import converter.PersonConverter;
 
 
 
@@ -27,30 +31,28 @@ public class Datenbank {
      * @author Rudolf Broger
      * @throws Exception
      */
-    public static void loadData() throws Exception {
-    	ArrayList<String> Adresse = new ArrayList<String>(); 
-    	 Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb"));
-    	 //Table table = db.getTable("Adressen");
-    	 //table.getColumn(null);
-    
-    	 Connection conn=DriverManager.getConnection(
-    	      "jdbc:ucanaccess://C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb");
-    	Statement s = conn.createStatement();
+    public static Table loadData() throws Exception {
 
-    	ResultSet rs = s.executeQuery("SELECT adrName, adrVorname, adrGebDat, adrAdresse FROM [tblAdressen]");
+    	ArrayList<Person> adresse = new ArrayList<Person>(); 
     	
-    	while (rs.next()) {
-    		Adresse.add(rs.getString(1))  ;
-    		Adresse.add(rs.getString(2));
-    		Adresse.add(rs.getString(3))  ;
-    		Adresse.add(rs.getString(4));
-    	    //System.out.println(rs.getString(1));
+    	 Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb"));
+    	 Table table = db.getTable("tblAdressen");
+		 PersonConverter converter = new PersonConverter();
 
-    	}
-        	    System.out.println(Adresse);
-
-    }
+    	 for (com.healthmarketscience.jackcess.Row row : table) {
+			Person p = converter.dbToModel(row);
+    		return (Table) p;
+    		 
+    	 }
+    	 System.out.print(adresse);	 //table.getColumn(null);
     
+    	// Connection conn=DriverManager.getConnection(
+    	//      "jdbc:ucanaccess://C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb");
+    	 
+    	return table;
+    	     
+    }
+      
     
     public static void saveData() {
     	// Todo
