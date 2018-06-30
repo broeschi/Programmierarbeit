@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import com.healthmarketscience.jackcess.*;
 import com.sun.rowset.internal.Row;
 
+import GUI.PersonController;
 import Person.Person;
 import converter.PersonConverter;
 
@@ -23,7 +24,8 @@ public class Datenbank {
      */
     public static void main(String[] args) {
     	try {
-			loadData();
+			//loadData();
+			PersonController.initialize();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,10 +51,9 @@ public class Datenbank {
     		return (Person) p;
     		 
     	 }
-    	 System.out.print(adresse);	 //table.getColumn(null);
+    	 
     
-    	// Connection conn=DriverManager.getConnection(
-    	//      "jdbc:ucanaccess://C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb");
+    	
     	 
     	return (Person) table;
     	     
