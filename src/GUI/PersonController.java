@@ -39,7 +39,7 @@ public class PersonController {
      * after the fxml file has been loaded.
      */
     @FXML
-    private void initialize() {
+	public static void initialize() {
     	try {
 			Datenbank.loadData();
 		} catch (Exception e) {
