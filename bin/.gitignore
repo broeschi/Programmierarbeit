@@ -1,2 +1,13 @@
 /datenbank/
 /GUI/
+
+/Person/
+/Stammdaten/
+/commons-lang-2.6.jar
+/commons-logging-1.1.1.jar
+/converter/
+/datenbank/
+/hsqldb-2.3.1.jar
+/jackcess-2.1.11.jar
+/ucanaccess-4.0.1.jar
+/Start/
