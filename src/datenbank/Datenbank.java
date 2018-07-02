@@ -45,7 +45,7 @@ public class Datenbank {
     	 Table table = db.getTable("tblAdressen");
 		 
 
-		 for(Row row : table) {
+		 for(com.healthmarketscience.jackcess.Row row : table) {
 			 PersonConverter converter = new PersonConverter();
 			Person p = converter.dbToModel(row);
     		return (Table) p;
