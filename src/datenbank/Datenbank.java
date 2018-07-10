@@ -16,22 +16,18 @@ import converter.PersonConverter;
 
 
 public class Datenbank {
-
-	  
-	  
     /**
      * @param args
      */
     public static void main(String[] args) {
-    	try {
-			//loadData();
-			PersonController.initialize();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	    }
-    
+    	MainApp.main(null);
+    	
+    }
+
+
+	  
+	  
+   
     /**
      * Verbindung zu MS Access DB aufbauen und Inhalt laden
      * 
@@ -58,6 +54,8 @@ public class Datenbank {
     	return (Person) table;
     	     
     }
+    
+    
       
     
     public static void saveData() {

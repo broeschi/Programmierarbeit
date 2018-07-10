@@ -7,9 +7,14 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /** Klasse zum Bilden der Teilnehmer*/
 public class Person {
+	
+  
+
 	
 	public Person(String adrName, String adrVorname, Date adrGebDat, String adrStrasse, Double adrNr, Double adrPLZ,
 			String adrWohnort) {
@@ -26,8 +31,12 @@ public class Person {
 	/** Nachname des Teilnemers*/
 	public String adrName;
 	
+	
+	
 	/** Vorname des Teilnemers*/
 	public String adrVorname;
+	
+   
 	
 	/** Geburstdatum des Teilnemers*/
 	public Date adrGebDat;
@@ -99,4 +108,31 @@ public class Person {
 	public void setAdrWohnort(String adrWohnort) {
 		this.adrWohnort = adrWohnort;
 	}
+	
+    /**
+     * The data as an observable list of Persons.
+     */
+    private ObservableList<Person> personData = FXCollections.observableArrayList();
+
+    /**
+     * Constructor
+     * @return 
+     */
+    public void MainApp() {
+    	try {
+			datenbank.Datenbank.loadData();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+
+    /**
+     * Returns the data as an observable list of Persons. 
+     * @return
+     */
+    public ObservableList<Person> getPersonData() {
+        return personData;
+    }
+
 }

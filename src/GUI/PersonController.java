@@ -1,6 +1,7 @@
 package GUI;
 
 import datenbank.Datenbank;
+import datenbank.MainApp;
 //import ch.makery.address.model.Person;
 //import ch.makery.adress.util.DateUtil;
 import javafx.fxml.FXML;
@@ -9,7 +10,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Person.Person;
-//import ch.makery.adress.util.DateUtil;
+
 
 
 /**
@@ -34,6 +35,8 @@ public class PersonController {
     private Person person;
     private boolean okClicked = false;
 
+	private MainApp mainApp;
+
     /**
      * Initializes the controller class. This method is automatically called
      * after the fxml file has been loaded.
@@ -43,7 +46,7 @@ public class PersonController {
     	try {
 			Datenbank.loadData();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
     }
@@ -99,6 +102,17 @@ public class PersonController {
 //            okClicked = true;
 //            dialogStage.close();
  //       }
+    /**
+     * Is called by the main application to give a reference back to itself.
+     * 
+     * @param mainApp
+     */
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+
+        // Add observable list data to the table
+       // personTable.setItems(mainApp.getPersonData());
+    }
  
 
 }
