@@ -20,7 +20,7 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Schützenverwaltung");
+        this.primaryStage.setTitle("SchÃ¼tzenverwaltung");
 
         initRootLayout();
 
@@ -77,7 +77,7 @@ public class MainApp extends Application {
     public Stage getPrimaryStage() {
         return primaryStage;
     }
-
+//
     
     
 	public static void main(String[] args) {
