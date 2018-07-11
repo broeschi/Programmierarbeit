@@ -12,7 +12,11 @@ import com.sun.rowset.internal.Row;
 
 import Person.Person;
 import converter.PersonConverter;
+import com.sun.rowset.internal.Row;
 
+import GUI.PersonController;
+import Person.Person;
+import converter.PersonConverter;
 
 
 public class Datenbank {
@@ -23,8 +27,14 @@ public class Datenbank {
      * @param args
      */
     public static void main(String[] args) {
-    	    }
-    
+    	MainApp.main(null);
+    	
+    }
+
+
+	  
+	  
+   
     /**
      * Verbindung zu MS Access DB aufbauen und Inhalt laden
      * 
