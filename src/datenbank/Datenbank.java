@@ -34,11 +34,8 @@ public class Datenbank {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	    }   
-    	MainApp.main(null);
-    	
-    }
-	  
+    	       
+ 	  
    
     	//MainApp.main(null);
     	
