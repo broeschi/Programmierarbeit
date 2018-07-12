@@ -17,18 +17,7 @@ public class Datenbank {
 
 	  
 	  
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-    	try {
-			loadData();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	    }
-    
+   
     /**
      * Verbindung zu MS Access DB aufbauen und Inhalt laden
      * 
@@ -45,10 +34,10 @@ public class Datenbank {
     	 Table table = db.getTable("tblAdressen");
 		 
 
-		 for(com.healthmarketscience.jackcess.Row row : table) {
+		 for(Row row : table) {
 			 PersonConverter converter = new PersonConverter();
 			Person p = converter.dbToModel(row);
-    		return (Table) p;
+    		return  (Table) p;
     		 
     	 }
     	 System.out.print(adresse);	 //table.getColumn(null);
