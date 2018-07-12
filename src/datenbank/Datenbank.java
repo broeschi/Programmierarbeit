@@ -21,9 +21,7 @@ import converter.PersonConverter;
 
 public class Datenbank {
 
-	  
-	  
-    /**
+	 
      * @param args
      */
     public static void main(String[] args) {
@@ -35,7 +33,7 @@ public class Datenbank {
 			e.printStackTrace();
 		}
     	       
- 	  
+ 	
    
     	//MainApp.main(null);
     	
@@ -56,7 +54,7 @@ public class Datenbank {
     	ArrayList<Person> adresse = new ArrayList<Person>(); 
     	
 
-    	 //Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb"));
+    	 //Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/SchÃ¼tzenverwaltung/MSV_be.accdb"));
     	 Database db = DatabaseBuilder.open(new File("C:\\Users\\u117089\\OneDrive\\Wirtschaftsinformatik\\FH\\Kalaidos\\Softwareentwicklung_I\\wo\\MSV_be.accdb"));
 
     	 Table table = db.getTable("tblAdressen");
@@ -71,7 +69,7 @@ public class Datenbank {
     	 System.out.print(adresse);	 //table.getColumn(null);
     
     	// Connection conn=DriverManager.getConnection(
-    	//      "jdbc:ucanaccess://C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb");
+    	//      "jdbc:ucanaccess://C:/Users/Rudolf Broger/Documents/SchÃ¼tzenverwaltung/MSV_be.accdb");
     	 
     	return table;
     	     
