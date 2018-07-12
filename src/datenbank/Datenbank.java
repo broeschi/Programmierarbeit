@@ -8,8 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.healthmarketscience.jackcess.*;
-import com.sun.rowset.internal.Row;
-
 import Person.Person;
 import converter.PersonConverter;
 
@@ -37,18 +35,20 @@ public class Datenbank {
      * @author Rudolf Broger
      * @throws Exception
      */
-    public static Table loadData() throws Exception {
+    public static Person loadData() throws Exception {
 
     	ArrayList<Person> adresse = new ArrayList<Person>(); 
     	
-    	 Database db = DatabaseBuilder.open(new File("C:\\Users\\u117089\\OneDrive\\Wirtschaftsinformatik\\FH\\Kalaidos\\Softwareentwicklung_I\\workspace\\Vereinsverwaltung\\MSV_be.accdb"));
+    	 //Database db = DatabaseBuilder.open(new File("C:\\Users\\u117089\\OneDrive\\Wirtschaftsinformatik\\FH\\Kalaidos\\Softwareentwicklung_I\\workspace\\Vereinsverwaltung\\MSV_be.accdb"));
+    	 Database db = DatabaseBuilder.open(new File("C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb"));
+
     	 Table table = db.getTable("tblAdressen");
 		 
 
-		 for(com.healthmarketscience.jackcess.Row row : table) {
+		 for(Row row : table) {
 			 PersonConverter converter = new PersonConverter();
 			Person p = converter.dbToModel(row);
-    		return (Table) p;
+    		return p;
     		 
     	 }
     	 System.out.print(adresse);	 //table.getColumn(null);
@@ -56,7 +56,7 @@ public class Datenbank {
     	// Connection conn=DriverManager.getConnection(
     	//      "jdbc:ucanaccess://C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb");
     	 
-    	return table;
+    	return (Person) table;
     	     
     }
       
