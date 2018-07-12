@@ -40,6 +40,14 @@ public class Datenbank {
     }
 	  
    
+    	//MainApp.main(null);
+    	
+    }
+
+
+	  
+	  
+   
     /**
      * Verbindung zu MS Access DB aufbauen und Inhalt laden
      * 
