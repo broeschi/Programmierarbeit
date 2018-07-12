@@ -35,7 +35,7 @@ public class Datenbank {
      * @author Rudolf Broger
      * @throws Exception
      */
-    public static Person loadData() throws Exception {
+    public static Table loadData() throws Exception {
 
     	ArrayList<Person> adresse = new ArrayList<Person>(); 
     	
@@ -45,10 +45,10 @@ public class Datenbank {
     	 Table table = db.getTable("tblAdressen");
 		 
 
-		 for(Row row : table) {
+		 for(com.healthmarketscience.jackcess.Row row : table) {
 			 PersonConverter converter = new PersonConverter();
 			Person p = converter.dbToModel(row);
-    		return p;
+    		return (Table) p;
     		 
     	 }
     	 System.out.print(adresse);	 //table.getColumn(null);
@@ -56,7 +56,7 @@ public class Datenbank {
     	// Connection conn=DriverManager.getConnection(
     	//      "jdbc:ucanaccess://C:/Users/Rudolf Broger/Documents/Schützenverwaltung/MSV_be.accdb");
     	 
-    	return (Person) table;
+    	return table;
     	     
     }
       
